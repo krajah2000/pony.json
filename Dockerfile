@@ -2,8 +2,15 @@
 FROM runpod/worker-comfyui:5.5.1-base
 
 # install custom nodes into comfyui (first node with --mode remote to fetch updated cache)
-# NOTE: The workflow contains unknown_registry custom nodes that could not be resolved automatically.
-# Skipping installation for unknown registry node: CheckpointLoaderSimple (no aux_id provided)
+# The workflow provided only unknown_registry custom nodes with no aux_id (no GitHub repo provided),
+# so they cannot be automatically installed or cloned. Listed below are the unresolved nodes from the workflow:
+# Could not resolve unknown custom node: CLIPTextEncode
+# Could not resolve unknown custom node: CLIPTextEncode
+# Could not resolve unknown custom node: EmptyLatentImage
+# Could not resolve unknown custom node: KSampler
+# Could not resolve unknown custom node: VAEDecode
+# Could not resolve unknown custom node: SaveImage
+# Could not resolve unknown custom node: CheckpointLoaderSimple
 
 # download models into comfyui
 # RUN # Could not find URL for ponyDiffusionV6XL.safetensors
